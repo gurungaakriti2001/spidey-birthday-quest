@@ -540,13 +540,7 @@
             </div>
 
             <div class="mic-status" id="mic-status">
-                <i class="fa-solid fa-microphone"></i> <span>Blow into mic or click candles to extinguish all 22 candles!</span>
-            </div>
-
-            <div class="mt-2 flex justify-center gap-2">
-                <button class="spidey-btn py-2 px-4 text-xs" onclick="blowAllCandlesManual()">
-                    <i class="fa-solid fa-wind"></i> Blow Out All Candles
-                </button>
+                <i class="fa-solid fa-microphone"></i> <span>Physically blow into the mic or tap each candle to extinguish them one by one.</span>
             </div>
 
             <div id="scroll-unlock-area" class="hidden mt-4">
@@ -917,18 +911,6 @@
                 playSound('blow');
                 checkAllCandlesBlown();
             }
-        }
-
-        function blowAllCandlesManual() {
-            document.querySelectorAll('.candle').forEach(c => {
-                if (!c.classList.contains('blown')) {
-                    c.classList.add('blown');
-                }
-            });
-            candlesBlown = totalCandles;
-            saveProgress('screen-victory');
-            playSound('blow');
-            checkAllCandlesBlown();
         }
 
         function checkAllCandlesBlown() {
